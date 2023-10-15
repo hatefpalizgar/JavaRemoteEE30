@@ -39,4 +39,8 @@ public class Example4 {
         assertTrue( 1 != 0); // PASS
     }
 
+
+    // TODO: Read more about T.D.D (Test Driven Development)
+    // TODO: Read more about Test Pyramid
+
 }
