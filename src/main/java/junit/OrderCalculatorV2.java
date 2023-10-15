@@ -8,15 +8,13 @@ public class OrderCalculatorV2 {
     public double calculateTotal(double itemPrice, int itemCount, double taxRate, double discount, double discountThreshold) {
         double totalPrice = itemPrice * itemCount;  // total price before tax
 
+        totalPrice *= (1 + taxRate);
+
         // Apply the discount only if the order's total price (before tax) is greater than a threshold
         if (totalPrice > discountThreshold) {
             totalPrice -= discount;
         }
 
-        // Above change in code will introduce a bug, because the discount is applied before adding the tax,
-        // which could lead to incorrect calculations.
-        // Without a test, this bug might go unnoticed
-        totalPrice *= (1+taxRate);
         return totalPrice;
     }
 
